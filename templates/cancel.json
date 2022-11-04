@@ -1,0 +1,17 @@
+{
+    "jsonrpc": "2.0",
+    "method": "Transaction",
+    "params": {
+        "Operation" : "Cancel",
+        "Amount": "12000",
+        "Currency": {
+            "Code": 643,
+            "Name": "RUB",
+            "Exp": 2
+        },
+        "Rrn": "1112222333",
+        "Authcode": "99987",
+        "Amount original": "13000"
+    },
+    "id": "22"
+}

@@ -1,0 +1,73 @@
+#:kivy 2.0.0
+
+
+<Program>:
+    BoxLayout:
+        orientation:'horizontal'
+        size: root.width,root.height
+        BoxLayout:
+            orientation:'vertical'
+            size:root.width,root.height
+            size_hint: 2,1
+            StackLayout:
+                spacing: '5dp'
+                padding: ('6dp', '17dp', '0dp', '0dp')
+                size_hint: 1,0.3
+                Spinner:
+                    id: spinner
+                    text: "Скорость порта"
+                    values: ["75", "110","134", "150","300","600","1200" , "1800", "2400","4800", "7200", "9600", "14400","19200","38400","57600", "115200","128000" ]
+                    on_text: root.spinner_click(spinner.text)
+                    size_hint:0.33,0.5
+                Button: 
+                    id: port_list
+                    text: "Список COM устройств"
+                    on_press: root.portList()
+                    size_hint:0.33,0.5
+                Spinner:
+                    id: spinner_files
+                    text: "файлы"
+                    pos: '382dp','569dp'
+                    size: '190dp','30dp'
+                    on_press: root.create_buttons()
+                    on_text: root.open_files(spinner_files.text)
+                    size_hint:0.33,0.5
+            
+            BoxLayout:
+                size_hint:1,2
+                orientation:'vertical'
+                size: root.width, root.height
+                TextInput:
+                    size_hint:1,0.2
+                    id: enter_adress
+                    text: 'COM3'
+                Button:
+                    size_hint:1,0.4
+                    text: 'Проверить соединения'
+                    on_press: root.connection_click()
+                TextInput:
+                    size_hint:1,0.9
+                    id: enter_messsage
+                    text: 'Сообщение для отправки'
+                    multiline: True
+                Button:
+                    size_hint:1,0.4
+                    text:'Отправить сообщение' 
+                    on_press: root.send_message(spinner_files.text)
+                Label:
+                    size_hint:1,0.4
+                    id: lab_res
+                    text_size: self.size
+                    halign: 'left'
+                    valign: 'top'
+                    color: 0,0,0,1
+                    
+
+
+
+        BoxLayout:
+            id: bl
+            orientation:'vertical'
+            spacing: 0
+            padding: ('0dp', '0dp', '0dp', '0dp')
+            margin: 0

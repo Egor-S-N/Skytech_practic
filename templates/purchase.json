@@ -1,0 +1,14 @@
+{
+    "jsonrpc": "2.0",
+    "method": "Transaction",
+    "params": {
+        "Operation":"Purchase",
+        "Amount": "1200",
+        "Currency": {
+            "Code": 643,
+            "Name": "RUB",
+            "Exp": 2
+        }
+    },
+    "id": "1"
+}
